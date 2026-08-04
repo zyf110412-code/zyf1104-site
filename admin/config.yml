@@ -1,0 +1,82 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+site_url: https://zyf1104.icu
+
+collections:
+  - name: "home"
+    label: "主页内容"
+    files:
+      - name: "home"
+        label: "主页内容"
+        file: "content.json"
+        fields:
+          - label: "首屏"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "小标签", name: "badge", widget: "string", required: false }
+              - { label: "问候语", name: "greeting", widget: "string" }
+              - { label: "名字", name: "name", widget: "string" }
+              - { label: "一句话介绍", name: "subtitle", widget: "text" }
+              - { label: "头像字母", name: "monogram", widget: "string" }
+              - label: "首屏标签"
+                name: "tags"
+                widget: "list"
+                field: { label: "标签", name: "tag", widget: "string" }
+              - { label: "主按钮文字", name: "primaryBtn", widget: "string", required: false }
+              - { label: "次按钮文字", name: "secondaryBtn", widget: "string", required: false }
+          - label: "关于我"
+            name: "about"
+            widget: "object"
+            fields:
+              - { label: "标题", name: "title", widget: "string" }
+              - label: "段落"
+                name: "paragraphs"
+                widget: "list"
+                field: { label: "段落", name: "text", widget: "text" }
+              - label: "数据卡片"
+                name: "stats"
+                widget: "list"
+                fields:
+                  - { label: "数字", name: "value", widget: "string" }
+                  - { label: "说明", name: "label", widget: "string" }
+          - label: "作品"
+            name: "projects"
+            widget: "object"
+            fields:
+              - { label: "标题", name: "title", widget: "string" }
+              - { label: "区块说明", name: "lead", widget: "text", required: false }
+              - label: "作品列表"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "图标（表情符号）", name: "emoji", widget: "string", required: false }
+                  - { label: "标题", name: "title", widget: "string" }
+                  - { label: "描述", name: "description", widget: "text" }
+                  - label: "标签"
+                    name: "tags"
+                    widget: "list"
+                    field: { label: "标签", name: "tag", widget: "string" }
+          - label: "联系"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "标题", name: "title", widget: "string" }
+              - { label: "区块说明", name: "lead", widget: "text", required: false }
+              - { label: "邮箱", name: "email", widget: "string" }
+              - label: "社交链接"
+                name: "socials"
+                widget: "list"
+                fields:
+                  - { label: "名称", name: "name", widget: "string" }
+                  - { label: "链接", name: "url", widget: "string" }
+          - label: "页脚"
+            name: "footer"
+            widget: "object"
+            fields:
+              - { label: "版权文字", name: "copyright", widget: "string" }

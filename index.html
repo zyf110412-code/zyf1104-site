@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tony · 个人主页</title>
+  <meta name="description" content="你好，我是 Tony。这里是我的个人主页，记录作品、想法与成长。" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script>
+    (function () {
+      var saved = localStorage.getItem("theme");
+      var theme = saved || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" id="brand" href="#top">🌱 Tony</a>
+      <div class="nav-right">
+        <nav class="nav" id="nav">
+          <a href="#about">关于我</a>
+          <a href="#projects">作品</a>
+          <a href="#contact">联系</a>
+        </nav>
+        <button class="theme-toggle" id="themeToggle" aria-label="切换深浅色" title="切换深浅色">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </button>
+        <button class="nav-toggle" id="navToggle" aria-label="打开菜单" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <p class="hero-badge" id="heroBadge">🌱 从零开始，慢慢生长</p>
+          <h1 id="heroHeading">你好，我是<span class="gradient-text">Tony</span></h1>
+          <p class="hero-sub" id="heroSub">我相信好的东西值得慢慢打磨。这里记录我的作品、想法和成长，也是属于我的一方小天地。</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" id="primaryBtn" href="#projects">看看我的作品</a>
+            <a class="btn btn-ghost" id="secondaryBtn" href="#contact">联系我</a>
+          </div>
+        </div>
+        <div class="hero-card" aria-hidden="true">
+          <div class="monogram" id="monogram">T</div>
+          <div class="hero-card-tags" id="heroTags">
+            <span>好奇</span><span>创造</span><span>生长</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section-title reveal" id="aboutTitle">关于我</h2>
+        <div class="about-grid">
+          <div class="about-text reveal" id="aboutParagraphs">
+            <p>一个正在从零搭建自己网站的人。这里会慢慢长出我的故事、作品和想法。</p>
+            <p>你可以在这里放一段自我介绍：你是谁、做过什么、正在做什么、未来想去哪里。</p>
+          </div>
+          <ul class="about-stats reveal" id="aboutStats">
+            <li><strong>2026</strong><span>从这里开始</span></li>
+            <li><strong>∞</strong><span>好奇心</span></li>
+            <li><strong>01</strong><span>属于我的网站</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title reveal" id="projectsTitle">我的作品</h2>
+        <p class="section-lead reveal" id="projectsLead">下面这些位置正等着你的内容——换成你的项目、作品或故事。</p>
+        <div class="projects-grid" id="projectsGrid">
+          <article class="project-card reveal">
+            <div class="project-cover cover-a">✍️</div>
+            <h3>个人博客</h3>
+            <p>记录学习与生活的随笔，把想法写成文字。</p>
+            <ul class="tags"><li>写作</li><li>思考</li></ul>
+          </article>
+          <article class="project-card reveal">
+            <div class="project-cover cover-b">🎨</div>
+            <h3>作品集</h3>
+            <p>把做过的东西好好陈列，让努力被看见。</p>
+            <ul class="tags"><li>设计</li><li>案例</li></ul>
+          </article>
+          <article class="project-card reveal">
+            <div class="project-cover cover-c">🤖</div>
+            <h3>贾维斯工作台</h3>
+            <p>我的专属智能工作台，收集好用的工具、灵感与自动化。</p>
+            <ul class="tags"><li>工具</li><li>效率</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container contact-inner">
+        <h2 class="section-title reveal" id="contactTitle">保持联系</h2>
+        <p class="section-lead reveal" id="contactLead">想认识我，或聊聊合作？随时欢迎。</p>
+        <a class="btn btn-primary reveal" id="contactEmail" href="mailto:17530380654@163.com">✉️ 17530380654@163.com</a>
+        <div class="socials reveal" id="socials">
+          <a href="#" class="chip">GitHub</a>
+          <a href="#" class="chip">微博</a>
+          <a href="#" class="chip">小红书</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year">2026</span> <span id="copyrightText">Tony · zyf1104.icu</span></p>
+      <button class="back-top" id="backTop" aria-label="回到顶部">↑</button>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
