@@ -22,6 +22,13 @@
 
 背景轮播图放在 `images/bg-1.jpg`、`images/bg-2.jpg`、`images/bg-3.jpg`，想换背景就直接替换这几个文件（宽图效果最好）；`content.json` 里的 `backgrounds` 字段记录图片顺序，后台编辑器里也能改。
 
+## 网站状态监控
+
+- 状态监控页：https://zyf1104.icu/status/ ，打开即可看到网站是否在线、响应速度、在线率。
+- 每 15 分钟由 GitHub Actions 自动检查一次，记录保存在仓库的 `status/history.json`。
+- 想手动检查一次：GitHub 仓库 → Actions → Uptime Monitor → Run workflow。
+- 访问统计：域名走的是 Cloudflare，可在 Cloudflare 控制台 → Analytics & Logs → Web Analytics 开启免费统计，之后就能看到每天的访问人数和次数。
+
 ## 如何免费发布到网上
 
 ### 方式一：GitHub Pages
