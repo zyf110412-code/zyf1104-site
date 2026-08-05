@@ -18,6 +18,8 @@
 
 想换配色的话，打开 `css/style.css` 最上方 `:root` 部分，修改 `--accent`（主色）、`--accent-2`（点缀色）等变量。
 
+头像放在 `images/avatar.png`，想换头像时直接替换这个文件（正方形图片效果最好）；`content.json` 里的 `avatar` 字段记录图片路径。
+
 ## 如何免费发布到网上
 
 ### 方式一：GitHub Pages

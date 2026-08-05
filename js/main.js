@@ -38,7 +38,19 @@
         esc(hero.greeting) + '<span class="gradient-text">' + esc(hero.name) + "</span>";
     }
     set("heroSub", hero.subtitle);
-    set("monogram", hero.monogram);
+    var monogramEl = document.getElementById("monogram");
+    if (monogramEl) {
+      if (hero.avatar) {
+        monogramEl.innerHTML =
+          '<img src="' +
+          esc(hero.avatar) +
+          '" alt="' +
+          esc(hero.name || "头像") +
+          ' 的头像" />';
+      } else {
+        monogramEl.textContent = hero.monogram || "";
+      }
+    }
     set("primaryBtn", hero.primaryBtn);
     set("secondaryBtn", hero.secondaryBtn);
 

@@ -24,6 +24,7 @@ collections:
               - { label: "名字", name: "name", widget: "string" }
               - { label: "一句话介绍", name: "subtitle", widget: "text" }
               - { label: "头像字母", name: "monogram", widget: "string" }
+              - { label: "头像图片", name: "avatar", widget: "image", required: false }
               - label: "首屏标签"
                 name: "tags"
                 widget: "list"
