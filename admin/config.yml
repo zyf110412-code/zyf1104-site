@@ -81,3 +81,7 @@ collections:
             widget: "object"
             fields:
               - { label: "版权文字", name: "copyright", widget: "string" }
+          - label: "背景轮播图"
+            name: "backgrounds"
+            widget: "list"
+            field: { label: "图片", name: "image", widget: "image" }

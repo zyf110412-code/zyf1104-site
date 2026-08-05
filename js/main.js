@@ -144,6 +144,27 @@
 
     var footer = data.footer || {};
     set("copyrightText", footer.copyright);
+
+    var backgrounds = data.backgrounds;
+    if (backgrounds && backgrounds.length) {
+      var carousel = document.getElementById("bgCarousel");
+      if (carousel) {
+        carousel.innerHTML = backgrounds
+          .map(function (src) {
+            return (
+              '<div class="bg-slide" style="background-image:url(\"' +
+              esc(src) +
+              '\")"></div>'
+            );
+          })
+          .join("");
+        bgSlides = carousel.querySelectorAll(".bg-slide");
+        bgIndex = 0;
+        if (bgSlides[0]) {
+          bgSlides[0].classList.add("active");
+        }
+      }
+    }
   }
 
   fetch("content.json")
@@ -201,6 +222,23 @@
   backTop.addEventListener("click", function () {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
+
+  // 背景轮播
+  var bgSlides = document.querySelectorAll(".bg-slide");
+  var bgIndex = 0;
+
+  function showNextBg() {
+    if (!bgSlides.length) {
+      return;
+    }
+    bgSlides[bgIndex].classList.remove("active");
+    bgIndex = (bgIndex + 1) % bgSlides.length;
+    bgSlides[bgIndex].classList.add("active");
+  }
+
+  if (bgSlides.length > 1) {
+    setInterval(showNextBg, 6000);
+  }
 
   // 滚动浮现动画
   var revealEls = document.querySelectorAll(".reveal");

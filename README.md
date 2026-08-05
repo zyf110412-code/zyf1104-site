@@ -20,6 +20,8 @@
 
 头像放在 `images/avatar.png`，想换头像时直接替换这个文件（正方形图片效果最好）；`content.json` 里的 `avatar` 字段记录图片路径。
 
+背景轮播图放在 `images/bg-1.jpg`、`images/bg-2.jpg`、`images/bg-3.jpg`，想换背景就直接替换这几个文件（宽图效果最好）；`content.json` 里的 `backgrounds` 字段记录图片顺序，后台编辑器里也能改。
+
 ## 如何免费发布到网上
 
 ### 方式一：GitHub Pages
