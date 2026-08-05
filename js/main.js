@@ -150,19 +150,19 @@
       var carousel = document.getElementById("bgCarousel");
       if (carousel) {
         carousel.innerHTML = backgrounds
-          .map(function (src) {
-            return (
-              '<div class="bg-slide" style="background-image:url(\"' +
-              esc(src) +
-              '\")"></div>'
-            );
+          .map(function () {
+            return '<div class="bg-slide"></div>';
           })
           .join("");
         bgSlides = carousel.querySelectorAll(".bg-slide");
         bgIndex = 0;
+        bgSlides.forEach(function (el, i) {
+          el.style.backgroundImage = "url('" + backgrounds[i] + "')";
+        });
         if (bgSlides[0]) {
           bgSlides[0].classList.add("active");
         }
+        preloadBgImages();
       }
     }
   }
@@ -237,8 +237,22 @@
   }
 
   if (bgSlides.length > 1) {
-    setInterval(showNextBg, 6000);
+    setInterval(showNextBg, 60000);
   }
+
+  function preloadBgImages() {
+    bgSlides.forEach(function (slide) {
+      var url = slide.style.backgroundImage;
+      if (url && url !== "none") {
+        var src = url.replace(/^url\(["']?/, "").replace(/["']?\)$/, "");
+        if (src) {
+          var img = new Image();
+          img.src = src;
+        }
+      }
+    });
+  }
+  preloadBgImages();
 
   // 滚动浮现动画
   var revealEls = document.querySelectorAll(".reveal");
